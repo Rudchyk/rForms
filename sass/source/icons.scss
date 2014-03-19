@@ -1,0 +1,72 @@
+@mixin icons($name) {
+    @include icons-sprite($name);
+    height: icons-sprite-height($name);
+    width: icons-sprite-width($name);
+}
+
+/* ---------->>> SPRITE <<<-----------*/
+
+$icons-spacing: 10px;
+$disable-magic-sprite-selectors:true;
+@import "icons/*.png";
+
+/* ---------->>> ICONS <<<-----------*/
+
+$forms-elements: check, radio;
+@each $forms-element in $forms-elements {
+    .#{$forms-element}-icon{
+        @include icons(#{$forms-element});
+    }
+    .#{$forms-element}.active{
+        .#{$forms-element}-icon{
+            @include icons(#{$forms-element}_active);
+        }
+    }
+}
+
+
+//icons
+
+// $icons: icon;
+// @each $icon in $icons {
+//     .#{$icon}-icon{
+//         @include icons(#{$icon});
+//     }
+// }
+
+//blocks
+
+// $blocks: blocks;
+// @each $block in $blocks {
+//     .#{$block}{
+//         @include icons(#{$block});
+//     }
+// }
+
+//icons pseudo
+
+// $befores: icon;
+// @each $before in $befores {
+//     .#{$before}:before{
+//         @include icons(#{$before});
+//     }
+// }
+
+// $afters: icon;
+// @each $after in $afters {
+//     .#{$after}:after{
+//         @include icons(#{$after});
+//     }
+// }
+
+//buttons
+
+// $buttons: button;
+// @each $button in $buttons {
+//     .#{$button}{
+//         @include icons(#{$button});
+//         &:hover{
+//             @include icons-sprite(#{$button}_hover);
+//         }
+//     }
+// }

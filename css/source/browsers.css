@@ -1,0 +1,4 @@
+/* ---------->>> IE8 <<<-----------*/
+.ie8 .field { background: #eee; line-height: 30px; }
+.ie8 .button { background: #eee; }
+.ie8 .button:hover { background: #ddd; }

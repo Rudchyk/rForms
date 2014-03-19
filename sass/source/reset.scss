@@ -1,0 +1,622 @@
+@import "compass/css3";
+@import "compass/reset/utilities";
+@import "compass/typography/text/ellipsis";
+@import "compass/typography/lists/bullets";
+@import "compass/utilities/general/clearfix";
+
+@mixin legacy-pie-clearfix {
+    &:after {
+        content: "\0020";
+        height: 0;
+        clear: both;
+        overflow: hidden;
+        visibility: hidden;
+        display: inline-block;
+        width: 100%;
+    }
+}
+@mixin pie-clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+@mixin reset-box-model {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+}
+@mixin no-bullets{
+    list-style: none;
+    li {
+        margin-left: 0px;
+    }
+}
+
+/* ---------->>> XHTML, HTML4, HTML5 Reset <<<-----------*/
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+dialog,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+font,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+hr,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+rp,
+rt,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video,
+xmp{
+    background: transparent;
+    font-size: 100%;
+    @include reset-box-model;
+    vertical-align: baseline;
+}
+
+html,
+body,
+.container-wrap{
+    height: 100%;
+}
+
+/* Correct `block` display not defined in IE 8/9. */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section{
+    display: block;
+}
+
+/*
+1. Correct `inline-block` display not defined in IE 8/9.
+2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+*/
+
+audio,
+canvas,
+video{
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+}
+
+/*
+Remove excess height in iOS 5 devices.
+*/
+
+audio:not([controls]){
+    height: 0;
+}
+
+/*
+Prevent modern browsers from displaying `audio` without controls.
+Address `[hidden]` styling not present in IE 8/9.
+Hide the `template` element in IE, Safari, and Firefox < 22.
+*/
+
+audio:not([controls]),
+[hidden],
+template{
+    display: none;
+}
+
+/* 1. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
+
+html{
+    font:{
+        family: sans-serif;
+        size: 100.01%;
+    }
+    overflow-y: scroll;
+    -ms-text-size-adjust: 100%; /* 1 */
+    -webkit-text-size-adjust: 100%; /* 1 */
+}
+
+body{
+    color: #181818;
+    background: white;
+    -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
+}
+
+pre,
+code,
+kbd,
+samp,
+q{
+    @include hyphens(none);
+}
+
+pre,
+code,
+kbd,
+samp{
+    font:{
+        family: monospace, serif;
+        size: 100%;
+    }
+}
+
+pre{
+    overflow: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+q,
+blockquote{
+    @include reset-quotation;
+}
+
+sub,
+sup {
+    font-size: smaller;
+}
+
+sup {
+    vertical-align: super;
+}
+
+sub {
+    vertical-align: sub;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+em,
+i,
+dfn{
+    font-style:italic;
+}
+
+u{
+    text-decoration:underline;
+}
+
+small{
+    font-size: 80%;
+}
+
+mark{
+    background: #ff0;
+    color: #000;
+}
+
+/*
+Remove the gray background color from active links in IE 10.
+*/
+
+a{
+    background: transparent;
+    img{
+        @include reset-image-anchor-border;
+    }
+}
+
+img {
+    border: 0;
+    color: transparent;
+    font-size: 0;
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+}
+
+/*img,
+embed,
+object,
+video {
+    max-width: 100%;
+}*/
+
+ul,
+ol{
+    @include no-bullets;
+}
+
+/*  Remove most spacing between table cells. */
+
+table{
+    @include reset-table;
+}
+
+th,
+td,
+caption{
+    @include reset-table-cell;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: normal;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} { font-size: 140% - $i*10; }
+}
+
+
+hr {
+    @include box-sizing(content-box);
+    height: 0;
+}
+
+/*Correct overflow displayed oddly in IE 9.*/
+
+svg:not(:root){
+    overflow: hidden;
+}
+
+/*
+1. Correct color not being inherited.
+   Known issue: affects color of disabled elements.
+2. Correct font properties not being inherited.
+3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea{
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    margin: 0; /* 3 */
+}
+
+/**
+1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls.
+2. Improve usability and consistency of cursor style between image-type `input` and others.
+*/
+
+a[href],
+input[type="submit"],
+html input[type="button"], /* 1 */
+input[type="image"],
+input[type="reset"],
+label[for],
+select,
+button,
+.button{
+    cursor: pointer; /* 2 */
+}
+
+/*Address `overflow` set to `hidden` in IE 8/9/10*/
+
+button{
+    overflow: visible;
+}
+
+/*
+Address inconsistent `text-transform` inheritance for `button` and `select`.
+All other form control elements do not inherit `text-transform` values.
+Correct `button` style inheritance in Firefox, IE 8+, and Opera
+Correct `select` style inheritance in Firefox.
+*/
+
+button,
+select{
+    text-transform: none;
+}
+
+a:active,
+a:hover,
+input,
+textarea,
+select,
+button,
+input:hover,
+textarea:hover,
+select:hover,
+button:hover,
+input:focus,
+textarea:focus,
+select:focus,
+button:focus{
+    outline: none;
+}
+
+/*
+It's recommended that you don't attempt to style these elements.
+Firefox's implementation doesn't respect box-sizing, padding, or width.
+
+1. Address box sizing set to `content-box` in IE 8/9/10.
+2. Remove excess padding in IE 8/9/10.
+*/
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box; /* 1 */
+    padding: 0; /* 2 */
+}
+
+input[type="checkbox"] {
+    vertical-align: bottom;
+}
+
+input[type="radio"] {
+    vertical-align: text-bottom;
+}
+
+/*
+Re-set default cursor for disabled elements.
+*/
+
+button[disabled],
+input[disabled],
+textarea,
+select{
+    cursor: default;
+}
+
+/*
+Remove inner padding and border in Firefox 4+.
+*/
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    @include reset-box-model;
+}
+
+acronym,
+abbr,
+span.caps {
+    cursor: help;
+}
+
+acronym,
+abbr {
+    border-bottom: 1px dashed #999;
+}
+
+/*
+Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+*/
+
+input {
+  line-height: normal;
+}
+
+textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: auto;
+    resize: none;
+    vertical-align: top;
+    @include box-sizing(border-box);
+}
+
+/*
+Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
+*/
+
+input[type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    -webkit-box-sizing: content-box; /* 2 */
+    @include box-sizing(content-box);
+}
+
+/*
+Remove inner padding and search cancel button in Safari and Chrome on OS X.
+Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance).
+*/
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+/*
+Don't inherit the `font-weight` (applied by a rule above).
+NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+*/
+
+optgroup {
+  font-weight: bold;
+}
+
+/* ---------->>> MY CLASSES  <<<-----------*/
+
+.wrapper{
+    @include box-sizing(border-box);
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{
+    clear: both;
+}
+
+.tac{
+    text-align: center;
+}
+
+.tal{
+    text-align: left;
+}
+
+.tar{
+    text-align: right;
+}
+
+.clearfix{
+    @include pie-clearfix;
+}
+
+.tablebox,
+.wrapper{
+    width: 100%;
+}
+
+/* ---------->>> OTHER CLASSES  <<<-----------*/
+
+.break{
+    word-wrap: break-word;
+    @include word-break(break-all);
+}
+
+.ellipsis{
+    @include ellipsis(no-wrap);
+}
+.dib,
+.icon,
+.button,
+.field,
+.wrapper{
+    display: inline-block;
+}
+
+.dib{
+    vertical-align: top;
+}
+
+.icon,
+.button,
+.field{
+    vertical-align: middle;
+}
+
+.tablebox{
+    display: table;
+}
+
+.cellbox{
+    display: table-cell;
+}
+
+/* ---------->>> ALIGNMENT BLOCKS IN WIDTH  <<<-----------*/
+
+.jbox{
+    line-height: 0;
+    text-align: justify;
+    @include legacy-pie-clearfix;
+
+    .dib{
+        line-height: normal;
+        text-align: left;
+    }
+}
+
+// /* ---------->>> VIRTUAL INPUT  <<<-----------*/
+
+// .input_box{
+//     position: relative;
+//     @include box-sizing(border-box);
+//     display: inline-block;
+//     vertical-align: top;
+
+//     .hidden_input{
+//         background: transparent;
+//         @include box-sizing(border-box);
+//         @include reset-box-model;
+//         @include reset-font;
+//         height: 100%;
+//         width: 100%;
+//     }
+// }

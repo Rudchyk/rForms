@@ -1,0 +1,49 @@
+@import "var";
+
+// /* ---------->>> IE11 <<<-----------*/
+
+.ie11{}
+
+// /* ---------->>> IE10 <<<-----------*/
+
+// /*clear the password reveal button and the clear button in IE10*/
+// .hidden_input::-ms-clear,
+// .hidden_input::-ms-reveal{
+//   display: none;
+// }
+.ie10{}
+
+// /* ---------->>> IE9 <<<-----------*/
+
+.ie9{}
+
+/* ---------->>> IE8 <<<-----------*/
+
+.ie8{
+    .field{
+        background: #eee;
+        line-height: $field-height;
+    }
+    .button{
+        background: #eee;
+        &:hover{
+            background: #ddd;
+        }
+    }
+}
+
+// /* ---------->>> Firefox <<<-----------*/
+
+.ff{}
+
+// /* ---------->>> Opera <<<-----------*/
+
+.opera{}
+
+// /* ---------->>> Safari <<<-----------*/
+
+.safari{}
+
+// /* ---------->>> Chrome <<<-----------*/
+
+.chrome{}

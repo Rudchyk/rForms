@@ -1,0 +1,45 @@
+@import "var";
+
+/* ---------->>> HEADER <<<-----------*/
+
+.header{
+    padding: 50px 0;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+/* ---------->>> CONTENT <<<-----------*/
+
+.content{
+    padding-bottom: $footer-height;
+}
+.form{
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+.form-title{}
+.form-row{
+    margin-bottom: 10px;
+}
+.form-row-text{}
+.form-row-select{}
+.form-row-radio{}
+.form-row-checkbox{}
+.form-label-box{
+    padding-bottom: 10px;
+    font-style: italic;
+}
+.form-label{}
+.form-field{}
+.radio-title{}
+.form-button{
+    padding-top: 10px;
+}
+
+// /* ---------->>> POPUPS <<<-----------*/
+
+// /* ---------->>> OTHER STYLES <<<-----------*/
+
+

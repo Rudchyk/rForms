@@ -1,0 +1,36 @@
+/* ---------->>> STANDARD STYLE <<<-----------*/
+a, .link { color: #287fc3; text-decoration: underline; }
+a:hover, .link:hover { text-decoration: none; }
+
+/* ---------->>> GLOBAL <<<-----------*/
+html { min-width: 400px; }
+html > body .container-wrap { height: auto; min-height: 100%; }
+
+body { background-color: #ccc; color: #444444; line-height: 1; font-family: Arial, Helvetica, sans-serif; font-size: 0.875em; }
+
+.container { margin: auto; width: 400px; }
+
+.container-wrap { position: relative; }
+
+.loading { background-color: #fff; background-image: url(../images/required/loading.gif); background-repeat: no-repeat; background-position: center; }
+
+/* ---------->>> TEXT PAGE STYLE <<<-----------*/
+.text { line-height: normal; }
+.text h1, .text h2, .text h3, .text h4, .text h5, .text h6 { margin: 10px 0; }
+.text ul { list-style: disc; margin: 10px 0; }
+.text ol { list-style: decimal; margin: 10px 0; }
+.text li { margin-left: 30px; }
+.text p { margin: 10px 0; }
+.text table, .text td { border: 1px solid #ccc; }
+.text table { margin: 10px 0; }
+.text td { padding: 5px; }
+.text hr { border-top: 1px solid #ddd; clear: both; margin: 10px 0; }
+.text blockquote { border-left: 2px solid #000; margin: 16px 28px 10px 16px; padding-left: 16px; }
+.text img, .text embed, .text object, .text video { max-width: 100%; }
+
+/* ---------->>> IMAGES <<<-----------*/
+img.aligncenter { display: block; margin: 0 auto 2px; }
+
+img.alignright { margin: 0 0 10px 16px; float: right; }
+
+img.alignleft { margin: 0 16px 10px 0; float: left; }

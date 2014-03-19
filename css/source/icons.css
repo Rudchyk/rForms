@@ -1,0 +1,11 @@
+/* ---------->>> SPRITE <<<-----------*/
+.icons-sprite, .check-icon, .check.active .check-icon, .radio-icon, .radio.active .radio-icon { background: url('../images/icons-scae5b74ff7.png') no-repeat; }
+
+/* ---------->>> ICONS <<<-----------*/
+.check-icon { background-position: 0 -60px; height: 20px; width: 20px; }
+
+.check.active .check-icon { background-position: 0 0; height: 20px; width: 20px; }
+
+.radio-icon { background-position: 0 -30px; height: 20px; width: 20px; }
+
+.radio.active .radio-icon { background-position: 0 -90px; height: 20px; width: 20px; }
