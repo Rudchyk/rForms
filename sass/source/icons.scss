@@ -61,12 +61,12 @@ $forms-elements: check, radio;
 
 //buttons
 
-// $buttons: button;
-// @each $button in $buttons {
-//     .#{$button}{
-//         @include icons(#{$button});
-//         &:hover{
-//             @include icons-sprite(#{$button}_hover);
-//         }
-//     }
-// }
+$buttons: md-close;
+@each $button in $buttons {
+    .#{$button}{
+        @include icons(#{$button});
+        &:hover{
+            @include icons-sprite(#{$button}_hover);
+        }
+    }
+}

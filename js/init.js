@@ -10,6 +10,9 @@ head.js(
     "js/jquery-1.10.2.min.js",
     // "js/form.js",
     "js/rform.min.js",
+    "js/tabs.js",
+    "js/totop.js",
+    "js/modal.js",
     // "js/scripts.js",
     function() {
         /*radio*/
@@ -20,6 +23,12 @@ head.js(
         $('.select-js').selectjs();
         /*file*/
         $('.fileload').file();
+        /*toTop*/
+        $('.toTop-js').toTop();
+        /*tabs*/
+        $('.tabs-js').tabs();
+        /*modal*/
+        $('.popup-link-js').modal();
     }
 );
 

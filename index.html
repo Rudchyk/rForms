@@ -19,7 +19,7 @@
 <body>
     <div class="container-wrap container">
         <header role="banner" class="header">
-            form
+            <span class="popup-link popup-link-js" data-popup="modal">form</span>
         </header>
         <div class="content clearfix home-content">
             <form role="form" action="#" class="form">
@@ -88,88 +88,96 @@
                     </div>
                 </div>
                 <div class="form-row form-row-radio">
-                    <div class="form-label-box">
-                        First radio
-                    </div>
-                    <div class="form-field">
-                        <div class="radio-box radio-box-js">
-                            <div class="radio dib active" data-radio_value="Radio11">
-                                <i class="radio-icon icon"></i>
-                                <span class="radio-text">Radio11</span>
+                    <!--tabs-->
+                    <div class="tabs-section tabs-section-js checkbox-tabs">
+                        <ul class="tabs tabs-js">
+                            <li class="tab tab-current button">First radio</li>
+                            <li class="tab button">Second radio</li>
+                        </ul>
+                        <div class="tab-content tab-content-js tab-content-visible">
+                            <div class="form-field">
+                                <div class="radio-box radio-box-js">
+                                    <div class="radio dib active" data-radio_value="Radio11">
+                                        <i class="radio-icon icon"></i>
+                                        <span class="radio-text">Radio11</span>
+                                    </div>
+                                    <div class="radio dib" data-radio_value="Radio12">
+                                        <i class="radio-icon icon"></i>
+                                        <span class="radio-text">Radio12</span>
+                                    </div>
+                                    <input type="hidden" name="radio" value="Radio11">
+                                </div>
                             </div>
-                            <div class="radio dib" data-radio_value="Radio12">
-                                <i class="radio-icon icon"></i>
-                                <span class="radio-text">Radio12</span>
+                        </div>
+                        <div class="tab-content tab-content-js">
+                            <div class="form-field">
+                                <div class="radio-box radio-box-js">
+                                    <div class="radio dib active" data-radio_value="Radio21">
+                                        <i class="radio-icon icon"></i>
+                                        <span class="radio-text">Radio21</span>
+                                    </div>
+                                    <div class="radio dib" data-radio_value="Radio22">
+                                        <i class="radio-icon icon"></i>
+                                        <span class="radio-text">Radio22</span>
+                                    </div>
+                                    <input type="hidden" name="radio2" value="Radio21">
+                                </div>
                             </div>
-                            <input type="hidden" name="radio" value="Radio11">
                         </div>
                     </div>
-                </div>
-                <div class="form-row form-row-radio">
-                    <div class="form-label-box">
-                        Second radio
-                    </div>
-                    <div class="form-field">
-                        <div class="radio-box radio-box-js">
-                            <div class="radio dib active" data-radio_value="Radio21">
-                                <i class="radio-icon icon"></i>
-                                <span class="radio-text">Radio21</span>
-                            </div>
-                            <div class="radio dib" data-radio_value="Radio22">
-                                <i class="radio-icon icon"></i>
-                                <span class="radio-text">Radio22</span>
-                            </div>
-                            <input type="hidden" name="radio2" value="Radio21">
-                        </div>
-                    </div>
+                    <!--end tabs-->
                 </div>
                 <div class="form-row form-row-checkbox">
-                    <div class="form-label-box">
-                        First checkbox
-                    </div>
-                    <div class="form-field">
-                        <label class="check checkbox-js" for="id1">
-                            <i class="check-icon icon"></i>
-                            <span class="check-text">First check</span>
-                            <input type="checkbox" name="id1" class="checkbox" value="First check" id="id1">
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row form-row-checkbox">
-                    <div class="form-label-box">
-                        Second checkbox
-                    </div>
-                    <div class="form-field">
-                        <label class="check checkbox-js" for="id2">
-                            <i class="check-icon icon"></i>
-                            <span class="check-text">Second check</span>
-                            <input type="checkbox" name="id2" class="checkbox checkbox-js" value="Second check" id="id2">
-                        </label>
-                    </div>
-                </div>
-                <div class="form-row form-row-file">
-                    <div class="form-label-box">
-                        File
-                    </div>
-                    <div class="form-field">
-                        <div class="fileload clearfix">
-                            <input type="file" name="file" value="" class="file-input" id="file">
-                            <div class="field fileload-field fileload-field-js ellipsis">Select file</div>
-                            <div class="button fileload-button fileload-button-js right">Select file</div>
+                    <!--tabs-->
+                    <div class="tabs-section tabs-section-js checkbox-tabs">
+                        <ul class="tabs tabs-js">
+                            <li class="tab tab-current button">First checkbox</li>
+                            <li class="tab button">Second checkbox</li>
+                        </ul>
+                        <div class="tab-content tab-content-js tab-content-visible">
+                            <div class="form-field">
+                                <label class="check checkbox-js" for="id1">
+                                    <i class="check-icon icon"></i>
+                                    <span class="check-text">First check</span>
+                                    <input type="checkbox" name="id1" class="checkbox" value="First check" id="id1">
+                                </label>
+                            </div>
+                        </div>
+                        <div class="tab-content tab-content-js">
+                            <div class="form-field">
+                                <label class="check checkbox-js" for="id2">
+                                    <i class="check-icon icon"></i>
+                                    <span class="check-text">Second check</span>
+                                    <input type="checkbox" name="id2" class="checkbox" value="Second check" id="id2">
+                                </label>
+                            </div>
                         </div>
                     </div>
+                    <!--end tabs-->
                 </div>
                 <div class="form-row form-row-file">
-                    <div class="form-label-box">
-                        File2
-                    </div>
-                    <div class="form-field">
-                        <div class="fileload clearfix">
-                            <input type="file" name="file2" value="" class="file-input" id="file2">
-                            <div class="field fileload-field fileload-field-js ellipsis">Select file</div>
-                            <div class="button fileload-button fileload-button-js right">Select file</div>
+                    <!--tabs-->
+                    <div class="tabs-section tabs-section-js checkbox-tabs">
+                        <ul class="tabs tabs-js">
+                            <li class="tab tab-current button">File</li>
+                            <li class="tab button">File2</li>
+                        </ul>
+                        <div class="tab-content tab-content-js tab-content-visible">
+                            <div class="fileload clearfix">
+                                <input type="file" name="file" value="" class="file-input" id="file">
+                                <div class="field fileload-field fileload-field-js ellipsis">Select file</div>
+                                <div class="button fileload-button fileload-button-js right">Select file</div>
+                            </div>
+                        </div>
+                        <div class="tab-content tab-content-js">
+                            <div class="fileload clearfix">
+                                <input type="file" name="file2" value="" class="file-input" id="file2">
+                                <div class="field fileload-field fileload-field-js ellipsis">Select file</div>
+                                <div class="button fileload-button fileload-button-js right">Select file</div>
+                            </div>
                         </div>
                     </div>
+                    <!--end tabs-->
                 </div>
                 <div class="form-button tac">
                     <button class="button">Отправить</button>
@@ -178,5 +186,12 @@
         </div><!--end content-->
         <footer role="contentinfo" class="footer"></footer><!--end footer-->
     </div><!--end main block-->
+    <span class="toTop toTop-js">Up</span>
+    <div class="popupper-modal popupper popupper-size popupper-js">
+      <div class="popupper-body">
+        <span class="popupper-close md-close icon popupper-close-js"></span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, cupiditate, voluptates sequi fugit magni quibusdam ad iste quas dolore libero animi asperiores quisquam omnis debitis ut dignissimos dolor officiis! Non, atque maxime et repellat corporis voluptate sequi saepe qui ipsam possimus deserunt cum hic sit. Sapiente magni iste at id.
+      </div>
+    </div><!-- /Popupper-modal -->
 </body>
 </html>

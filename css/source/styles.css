@@ -11,3 +11,31 @@
 .form-label-box { padding-bottom: 10px; font-style: italic; }
 
 .form-button { padding-top: 10px; }
+
+/*tabs*/
+.tabs { width: 100%; display: table; }
+.tabs .tab { display: table-cell; width: 50%; cursor: pointer; text-align: center; }
+.tabs .tab.tab-current { background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjMpIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDAsIDAsIDAsIDAuMykiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='); background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.3)), color-stop(100%, rgba(0, 0, 0, 0.3))); background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)); background: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)); background: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)); background: linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.3)); color: #222; }
+
+.tab-content { padding-top: 10px; display: none; }
+.tab-content.tab-content-visible { display: block; }
+
+/*end tabs*/
+/* ---------->>> POPUPS <<<-----------*/
+.popup-link { cursor: pointer; }
+
+.popup-overlay { background: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; -webkit-transform: translateZ(0); }
+
+.popupper { display: none; position: fixed; z-index: 1000; background: #fff; border-radius: 10px; box-shadow: 0 0 3px rgba(0, 0, 0, 0.2); }
+
+.popupper-size { width: 500px; }
+
+.popupper-close { cursor: pointer; position: absolute; top: 5px; right: 5px; }
+
+.popupper-body { padding: 20px; }
+
+.popupper-pos { position: absolute; }
+
+/* ---------->>> OTHER STYLES <<<-----------*/
+.toTop { position: fixed; bottom: 10px; right: 10px; display: none; width: 51px; height: 51px; background: #222; border-radius: 5px; color: #fff; cursor: pointer; overflow: hidden; line-height: 51px; text-align: center; text-decoration: none; }
+.toTop:hover { background: #000; }
