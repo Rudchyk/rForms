@@ -1,20 +1,22 @@
+var sourcePath = "";
+
 if (head.browser.ie && head.browser.version < 8) {
-    location.replace("ie7/ie7.html");
+    location.replace(sourcePath+"ie7/ie7.html");
 }
 
 if (head.browser.ie && head.browser.version < 9) {
-    head.load("js/html5.js");
+    head.load(sourcePath+"js/html5.js");
 }
 
 head.js(
-    "js/jquery-1.10.2.min.js",
-    "js/jquery.actual.min.js",
-    "js/rform.min.js",
-    "js/tabs.js",
-    "js/totop.js",
-    "js/modal.js",
-    "js/tip.validate.js",
-    "js/jquery.validate.min.js",
+    sourcePath+"js/jquery-1.10.2.min.js",
+    sourcePath+"js/jquery.actual.min.js",
+    sourcePath+"js/rform.min.js",
+    sourcePath+"js/tabs.js",
+    sourcePath+"js/totop.js",
+    sourcePath+"js/modal.js",
+    sourcePath+"js/tip.validate.js",
+    sourcePath+"js/jquery.validate.min.js",
     // "js/scripts.js",
     function() {
         /*radio*/
@@ -82,7 +84,7 @@ head.js(
 
 if (head.browser.ie && head.browser.version < 10) {
     head.js(
-        "js/placeholder.min.js",
+        sourcePath+"js/placeholder.min.js",
         function() {
             $("input[placeholder], textarea[placeholder]").textPlaceholder();
         }
@@ -100,7 +102,7 @@ if (head.browser.opera) {
             }
         }
         var inputs = document.getElementsByTagName("input");
-        for (var i = 0; i < inputs.length; ++i) {
+        for (var i = 0, iLength = inputs.length; i < iLength; i++) {
             var el = inputs[i],
                 ph = el.getAttribute("placeholder");
             if (ph && !el.hasAttribute("value")) {
