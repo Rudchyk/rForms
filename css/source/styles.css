@@ -39,3 +39,22 @@
 /* ---------->>> OTHER STYLES <<<-----------*/
 .toTop { position: fixed; bottom: 10px; right: 10px; display: none; width: 51px; height: 51px; background: #222; border-radius: 5px; color: #fff; cursor: pointer; overflow: hidden; line-height: 51px; text-align: center; text-decoration: none; }
 .toTop:hover { background: #000; }
+
+.tip.tip-help { cursor: help; }
+
+.messageTip-wrapper { display: inline-block; position: relative; vertical-align: top; }
+
+.messageTip { background-color: #ef5b5b; box-shadow: 3px 4px 6px rgba(0, 0, 1, 0.22); color: white; display: none; line-height: 1; padding: 10px 14px; position: absolute; white-space: nowrap; z-index: 1000; }
+.messageTip:before { border-style: solid; content: ''; position: absolute; }
+.messageTip.messageTip-right:before, .messageTip.messageTip-left:before { margin-top: -5px; top: 50%; }
+.messageTip.messageTip-top:before, .messageTip.messageTip-bottom:before { margin-left: -5px; left: 50%; }
+.messageTip.messageTip-right { margin-left: 12px; left: 100%; }
+.messageTip.messageTip-right:before { border-width: 5px 8px 5px 0; border-color: transparent #ef5b5b transparent transparent; right: 100%; }
+.messageTip.messageTip-left { margin-right: 12px; right: 100%; }
+.messageTip.messageTip-left:before { border-width: 5px 0 5px 8px; border-color: transparent transparent transparent #ef5b5b; left: 100%; }
+.messageTip.messageTip-top { bottom: 100%; margin-bottom: 12px; }
+.messageTip.messageTip-top:before { border-width: 8px 5px 0 5px; border-color: #ef5b5b transparent transparent transparent; top: 100%; }
+.messageTip.messageTip-bottom { margin-top: 12px; top: 100%; }
+.messageTip.messageTip-bottom:before { border-width: 0 5px 8px 5px; border-color: transparent transparent #ef5b5b transparent; bottom: 100%; }
+.messageTip.messageTip-fix { position: fixed; }
+.messageTip.messageTip-fix:before { border: none; content: ''; position: absolute; }

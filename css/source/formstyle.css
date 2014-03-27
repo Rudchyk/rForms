@@ -7,6 +7,8 @@
 .field:-ms-input-placeholder { color: #777777; }
 .field.text-placeholder { color: #777777; }
 .field[data-operaplaceholder] { color: #777777; }
+.field.error { border: 1px solid red; color: red; }
+.field.valid { border: 1px solid green; color: green; }
 
 select.field { padding-right: 0; }
 

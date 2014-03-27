@@ -27,8 +27,13 @@ Hide the `template` element in IE, Safari, and Firefox < 22.
 */
 audio:not([controls]), [hidden], template { display: none; }
 
+/*
+Addresses `font-family` inconsistency between `textarea` and other form elements.
+*/
+html, button, input, select, textarea { font-family: sans-serif; }
+
 /* 1. Prevent iOS text size adjust after orientation change, without disabling user zoom. */
-html { font-family: sans-serif; font-size: 100.01%; overflow-y: scroll; -ms-text-size-adjust: 100%; /* 1 */ -webkit-text-size-adjust: 100%; /* 1 */ }
+html { font-size: 100.01%; overflow-y: scroll; -ms-text-size-adjust: 100%; /* 1 */ -webkit-text-size-adjust: 100%; /* 1 */ }
 
 body { color: #181818; background: white; -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */ }
 
@@ -99,10 +104,9 @@ svg:not(:root) { overflow: hidden; }
 
 /*
 1. Correct color not being inherited. Known issue: affects color of disabled elements.
-2. Correct font properties not being inherited.
-3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+2. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
 */
-button, input, optgroup, select, textarea { color: inherit; /* 1 */ font: inherit; /* 2 */ margin: 0; /* 3 */ }
+button, input, optgroup, select, textarea { color: inherit; /* 1 */ margin: 0; /* 2 */ }
 
 /**
 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio` and `video` controls.
@@ -121,20 +125,31 @@ Correct `select` style inheritance in Firefox.
 */
 button, select { text-transform: none; }
 
-a:active, a:hover, input, textarea, select, button, input:hover, textarea:hover, select:hover, button:hover, input:focus, textarea:focus, select:focus, button:focus { outline: none; }
+a:active, a:hover { outline: none; }
+
+input, input:hover, input:focus, textarea, textarea:hover, textarea:focus, select, select:hover, select:focus, button, button:hover, button:focus { outline: none; }
 
 /*
+Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
 It's recommended that you don't attempt to style these elements.
 Firefox's implementation doesn't respect box-sizing, padding, or width.
 
 1. Address box sizing set to `content-box` in IE 8/9/10.
 2. Remove excess padding in IE 8/9/10.
+3. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+4. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
+
+Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`.
+Remove inner padding and search cancel button in Safari and Chrome on OS X.
+Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance).
 */
+input { line-height: normal; }
 input[type="checkbox"], input[type="radio"] { box-sizing: border-box; /* 1 */ padding: 0; /* 2 */ }
-
 input[type="checkbox"] { vertical-align: bottom; }
-
 input[type="radio"] { vertical-align: text-bottom; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+input[type="search"] { -webkit-appearance: textfield; /* 3 */ -webkit-box-sizing: content-box; /* 4 */ -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
 /*
 Re-set default cursor for disabled elements.
@@ -150,28 +165,7 @@ acronym, abbr, span.caps { cursor: help; }
 
 acronym, abbr { border-bottom: 1px dashed #999; }
 
-/*
-Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
-*/
-input { line-height: normal; }
-
 textarea { font-family: Arial, Helvetica, sans-serif; overflow: auto; resize: none; vertical-align: top; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-
-/*
-Fix the cursor style for Chrome's increment/decrement buttons. For certain `font-size` values of the `input`, it causes the cursor style of the decrement button to change from `default` to `text`. */
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
-
-/*
-1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
-2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome (include `-moz` to future-proof).
-*/
-input[type="search"] { -webkit-appearance: textfield; /* 1 */ -webkit-box-sizing: content-box; /* 2 */ -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; }
-
-/*
-Remove inner padding and search cancel button in Safari and Chrome on OS X.
-Safari (but not Chrome) clips the cancel button when the search input has padding (and `textfield` appearance).
-*/
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
 /*
 Don't inherit the `font-weight` (applied by a rule above).
@@ -268,6 +262,8 @@ img.alignleft { margin: 0 16px 10px 0; float: left; }
 .field:-ms-input-placeholder { color: #777777; }
 .field.text-placeholder { color: #777777; }
 .field[data-operaplaceholder] { color: #777777; }
+.field.error { border: 1px solid red; color: red; }
+.field.valid { border: 1px solid green; color: green; }
 
 select.field { padding-right: 0; }
 
@@ -373,6 +369,25 @@ a.button:hover, span.button:hover, div.button:hover { text-decoration: none; }
 /* ---------->>> OTHER STYLES <<<-----------*/
 .toTop { position: fixed; bottom: 10px; right: 10px; display: none; width: 51px; height: 51px; background: #222; border-radius: 5px; color: #fff; cursor: pointer; overflow: hidden; line-height: 51px; text-align: center; text-decoration: none; }
 .toTop:hover { background: #000; }
+
+.tip.tip-help { cursor: help; }
+
+.messageTip-wrapper { display: inline-block; position: relative; vertical-align: top; }
+
+.messageTip { background-color: #ef5b5b; box-shadow: 3px 4px 6px rgba(0, 0, 1, 0.22); color: white; display: none; line-height: 1; padding: 10px 14px; position: absolute; white-space: nowrap; z-index: 1000; }
+.messageTip:before { border-style: solid; content: ''; position: absolute; }
+.messageTip.messageTip-right:before, .messageTip.messageTip-left:before { margin-top: -5px; top: 50%; }
+.messageTip.messageTip-top:before, .messageTip.messageTip-bottom:before { margin-left: -5px; left: 50%; }
+.messageTip.messageTip-right { margin-left: 12px; left: 100%; }
+.messageTip.messageTip-right:before { border-width: 5px 8px 5px 0; border-color: transparent #ef5b5b transparent transparent; right: 100%; }
+.messageTip.messageTip-left { margin-right: 12px; right: 100%; }
+.messageTip.messageTip-left:before { border-width: 5px 0 5px 8px; border-color: transparent transparent transparent #ef5b5b; left: 100%; }
+.messageTip.messageTip-top { bottom: 100%; margin-bottom: 12px; }
+.messageTip.messageTip-top:before { border-width: 8px 5px 0 5px; border-color: #ef5b5b transparent transparent transparent; top: 100%; }
+.messageTip.messageTip-bottom { margin-top: 12px; top: 100%; }
+.messageTip.messageTip-bottom:before { border-width: 0 5px 8px 5px; border-color: transparent transparent #ef5b5b transparent; bottom: 100%; }
+.messageTip.messageTip-fix { position: fixed; }
+.messageTip.messageTip-fix:before { border: none; content: ''; position: absolute; }
 
 /* ---------->>> IE8 <<<-----------*/
 .ie8 .field { background: #eee; line-height: 30px; }

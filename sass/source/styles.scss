@@ -130,3 +130,110 @@ $toTopHeight : 51px;
         background: #000;
     }
 }
+
+.tip{
+    &.tip-help{
+        cursor: help;
+    }
+}
+
+.messageTip-wrapper{
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+//message style
+$message-bg: #ef5b5b;
+$message-padding: 10px 14px;
+$message-shadow: 3px 4px 6px rgba(0,0,1,.22);
+$message-textColor: #fff;
+$message-lineHeight: 1;
+
+//message type style
+$arrow-width: 5px;
+$arrow-height: 8px;
+$message-indent: 12px;
+
+.messageTip{
+    background-color: $message-bg;
+    box-shadow: $message-shadow;
+    color: $message-textColor;
+    display: none;
+    line-height: $message-lineHeight;
+    padding: $message-padding;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1000;
+    &:before{
+        border-style: solid;
+        content: '';
+        position: absolute;
+    }
+    &.messageTip-right,
+    &.messageTip-left{
+        &:before{
+            margin-top: -$arrow-width;
+            top: 50%;
+        }
+    }
+    &.messageTip-top,
+    &.messageTip-bottom{
+        &:before{
+            margin-left: -$arrow-width;
+            left: 50%;
+        }
+    }
+    &.messageTip-right{
+        margin-left: $message-indent;
+        left: 100%;
+        &:before{
+            border: {
+                width: $arrow-width $arrow-height $arrow-width 0;
+                color: transparent $message-bg transparent transparent;
+            }
+            right: 100%;
+        }
+    }
+    &.messageTip-left{
+        margin-right: $message-indent;
+        right: 100%;
+        &:before{
+            border: {
+                width: $arrow-width 0 $arrow-width $arrow-height;
+                color: transparent transparent transparent $message-bg;
+            }
+            left: 100%;
+        }
+    }
+    &.messageTip-top{
+        bottom: 100%;
+        margin-bottom: $message-indent;
+        &:before{
+            border: {
+                width: $arrow-height $arrow-width 0 $arrow-width;
+                color: $message-bg transparent transparent transparent;
+            }
+            top: 100%;
+        }
+    }
+    &.messageTip-bottom{
+        margin-top: $message-indent;
+        top: 100%;
+        &:before{
+            border: {
+                width: 0 $arrow-width $arrow-height $arrow-width;
+                color: transparent transparent $message-bg transparent;
+            }
+            bottom: 100%;
+        }
+    }
+    &.messageTip-fix{
+        position: fixed;
+        &:before{
+            border: none;
+            content: '';
+            position: absolute;
+        }
+    }
+}
