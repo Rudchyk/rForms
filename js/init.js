@@ -15,6 +15,7 @@ head.js(
     sourcePath+"js/tabs.js",
     sourcePath+"js/totop.js",
     sourcePath+"js/modal.js",
+    sourcePath+"js/pass.show.js",
     sourcePath+"js/tip.validate.js",
     sourcePath+"js/jquery.validate.min.js",
     // "js/scripts.js",
@@ -78,6 +79,15 @@ head.js(
             errorPlacement: function(){ /*5*/
                 return false;
             }
+        });
+
+        $('.pass-bl1').passShow();
+
+        $('.pass-bl2').passShow({
+            showText: '',
+            hideText: '',
+            showClass: 'pass-show-icon',
+            hideClass: 'pass-hide-icon',
         });
     }
 );

@@ -14,9 +14,4 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
 }); // Ready
