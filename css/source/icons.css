@@ -1,5 +1,5 @@
 /* ---------->>> SPRITE <<<-----------*/
-.icons-sprite, .check-icon, .check.active .check-icon, .radio-icon, .radio.active .radio-icon, .md-close, .md-close:hover { background: url('../images/icons-s63c9a8cc51.png') no-repeat; }
+.icons-sprite, .check-icon, .check.active .check-icon, .radio-icon, .radio.active .radio-icon, .pass-hide-icon, .pass-show-icon, .pass-btn-icon:hover, .md-close, .md-close:hover { background: url('../images/icons-s3f7d35bdc0.png') no-repeat; }
 
 /* ---------->>> ICONS <<<-----------*/
 .check-icon { background-position: 0 -90px; height: 20px; width: 20px; }
@@ -9,6 +9,12 @@
 .radio-icon { background-position: 0 -60px; height: 20px; width: 20px; }
 
 .radio.active .radio-icon { background-position: 0 -150px; height: 20px; width: 20px; }
+
+.pass-hide-icon { background-position: 0 -220px; height: 10px; width: 18px; }
+
+.pass-show-icon { background-position: 0 -180px; height: 10px; width: 18px; }
+
+.pass-btn-icon:hover { background-position: 0 -200px; }
 
 .md-close { background-position: 0 -120px; height: 20px; width: 20px; }
 .md-close:hover { background-position: 0 0; }

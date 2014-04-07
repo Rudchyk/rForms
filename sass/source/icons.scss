@@ -24,6 +24,18 @@ $forms-elements: check, radio;
     }
 }
 
+$pass-elements: hide, show;
+@each $pass-element in $pass-elements {
+    .pass-#{$pass-element}-icon{
+        @include icons(pass-#{$pass-element});
+    }
+}
+.pass-btn-icon:hover{
+    @include icons-sprite(pass_hover);
+}
+
+
+
 
 //icons
 

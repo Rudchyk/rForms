@@ -314,7 +314,7 @@ a.button:hover, span.button:hover, div.button:hover { text-decoration: none; }
 .fileload-button { width: 25%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* ---------->>> SPRITE <<<-----------*/
-.icons-sprite, .check-icon, .check.active .check-icon, .radio-icon, .radio.active .radio-icon, .md-close, .md-close:hover { background: url('../images/icons-s63c9a8cc51.png') no-repeat; }
+.icons-sprite, .check-icon, .check.active .check-icon, .radio-icon, .radio.active .radio-icon, .pass-hide-icon, .pass-show-icon, .pass-btn-icon:hover, .md-close, .md-close:hover { background: url('../images/icons-s3f7d35bdc0.png') no-repeat; }
 
 /* ---------->>> ICONS <<<-----------*/
 .check-icon { background-position: 0 -90px; height: 20px; width: 20px; }
@@ -324,6 +324,12 @@ a.button:hover, span.button:hover, div.button:hover { text-decoration: none; }
 .radio-icon { background-position: 0 -60px; height: 20px; width: 20px; }
 
 .radio.active .radio-icon { background-position: 0 -150px; height: 20px; width: 20px; }
+
+.pass-hide-icon { background-position: 0 -220px; height: 10px; width: 18px; }
+
+.pass-show-icon { background-position: 0 -180px; height: 10px; width: 18px; }
+
+.pass-btn-icon:hover { background-position: 0 -200px; }
 
 .md-close { background-position: 0 -120px; height: 20px; width: 20px; }
 .md-close:hover { background-position: 0 0; }
@@ -346,11 +352,7 @@ a.button:hover, span.button:hover, div.button:hover { text-decoration: none; }
 
 .pass-btn { cursor: pointer; position: absolute; right: 10px; top: 0; line-height: 30px; color: #999; font-size: 11px; }
 
-.pass-show-icon, .pass-hide-icon { width: 10px; height: 10px; top: 50%; margin-top: -5px; }
-
-.pass-show-icon { background: red; }
-
-.pass-hide-icon { background: green; }
+.pass-show-icon, .pass-hide-icon { top: 50%; margin-top: -5px; }
 
 /*tabs*/
 .tabs { width: 100%; display: table; }

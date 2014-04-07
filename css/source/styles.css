@@ -16,11 +16,7 @@
 
 .pass-btn { cursor: pointer; position: absolute; right: 10px; top: 0; line-height: 30px; color: #999; font-size: 11px; }
 
-.pass-show-icon, .pass-hide-icon { width: 10px; height: 10px; top: 50%; margin-top: -5px; }
-
-.pass-show-icon { background: red; }
-
-.pass-hide-icon { background: green; }
+.pass-show-icon, .pass-hide-icon { top: 50%; margin-top: -5px; }
 
 /*tabs*/
 .tabs { width: 100%; display: table; }
