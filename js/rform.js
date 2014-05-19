@@ -19,12 +19,13 @@
             dropList.on('click', 'li', function(){
                 var thisBox = $(this),
                     thisText = thisBox.text(),
+                    thisData = thisBox.data('option'),
                     select = thisBox.parent().siblings('div');
                 select
                     .text(thisText)
                     .removeClass(settings.activeClass)
                     .next().hide().end()
-                    .parent().children('input').val(thisText)
+                    .parent().children('input').val(thisData)
                     .trigger('change');
             });
             $(document).click(function(event) {
