@@ -34,7 +34,9 @@ a.button:hover, span.button:hover, div.button:hover { text-decoration: none; }
 .slct.field { padding-right: 30px; line-height: 30px; }
 .slct:after { content: ''; position: absolute; right: 5px; top: 50%; margin-top: -5px; border-style: solid; border-width: 10px 5px 0 5px; border-color: #474545 transparent transparent transparent; }
 
-.slctdrop { background: white; border: 1px solid #cccccc; border-radius: 3px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: none; position: absolute; z-index: 100; top: 100%; left: 0; width: 100%; }
+.slctdrop { background: white; border: 1px solid #cccccc; border-radius: 3px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; display: none; position: absolute; z-index: 100; top: 100%; left: 0; width: 100%; overflow: hidden; }
+
+.slctdrop-list { width: 110%; overflow-y: auto; max-height: 210px; }
 
 .slctdrop-item { color: #444444; cursor: pointer; display: block; line-height: 30px; padding: 0 4px; }
 .slctdrop-item:hover { background: #e9e9e9; }

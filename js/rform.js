@@ -6,7 +6,9 @@
                 key : true,
                 selectBox : this,
                 activeClass : 'active',
-                slctdrop : $('.slctdrop-js')
+                slctdrop : $('.slctdrop-js'),
+                slct: '.slct',
+                selectjs: '.select-js'
             },
             dropList = $(settings.selectBox).find(settings.slctdrop);
             $(settings.selectBox).on('click', 'div', function(){
@@ -20,7 +22,7 @@
                 var thisBox = $(this),
                     thisText = thisBox.text(),
                     thisData = thisBox.data('option'),
-                    select = thisBox.parent().siblings('div');
+                    select = thisBox.closest(settings.selectjs).find(settings.slct);
                 select
                     .text(thisText)
                     .removeClass(settings.activeClass)

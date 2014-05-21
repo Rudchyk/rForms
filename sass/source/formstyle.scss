@@ -155,6 +155,12 @@ $slct-arrow-color: #474545;
     top: 100%;
     left: 0;
     width: 100%;
+    overflow: hidden;
+}
+.slctdrop-list{
+    width: 110%;
+    overflow-y: auto;
+    max-height: $field-height*7;
 }
 .slctdrop-item{
     color: $field-color;
