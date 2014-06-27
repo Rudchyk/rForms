@@ -121,10 +121,7 @@ $slct-arrow-color: #474545;
     &.active{
         @include field-focus;
         &:after{
-            border: {
-                width: 0 $slct-arrow-width $slct-arrow-height $slct-arrow-width;
-                color: transparent transparent $slct-arrow-color transparent;
-            }
+            @include arrowBorder("bottom", $slct-arrow-height, $slct-arrow-color, "top");
         }
     }
     &.field{
@@ -132,16 +129,11 @@ $slct-arrow-color: #474545;
         line-height: $field-height;
     }
     &:after{
-        content: '';
-        position: absolute;
-        right: 5px;
-        top: 50%;
-        margin-top: -($slct-arrow-height/2);
-        border: {
-            style: solid;
-            width: $slct-arrow-height $slct-arrow-width 0 $slct-arrow-width;
-            color: $slct-arrow-color transparent transparent transparent;
-        }
+        @include arrow("top", $slct-arrow-width, $slct-arrow-height, $slct-arrow-color, true, false){
+            right: 5px;
+            top: 50%;
+            margin-top: -($slct-arrow-height/2);
+        };
     }
 }
 .slctdrop{

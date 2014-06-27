@@ -23,3 +23,58 @@ $standard: 400px;
 // $min-width: 240px;
 $footer-height: 100px;
 $field-height: 30px;
+
+// ** Pseudo
+@mixin pseudo-style{
+    content: '';
+    position: absolute;
+}
+// ** Align icons
+@mixin align-icon($top){
+    position: relative;
+    top: -#{$top}px;
+}
+// ** Arrows
+@mixin arrowBorder($side, $height, $color, $mirrorSide){
+    border:{
+        #{$side}:{
+            width: $height;
+            color: $color;
+        }
+        #{$mirrorSide}:{
+            width: 0;
+        }
+    }
+}
+@mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
+    $mirrorSide: null;
+    $top: "top";
+    $right: "right";
+    $bottom: "bottom";
+    $left: "left";
+
+    @if $side == $top { $mirrorSide: $bottom; }
+    @else if $side == $right { $mirrorSide: $left; }
+    @else if $side == $bottom{ $mirrorSide: $top; }
+    @else{ $mirrorSide: $right; }
+
+    @if $once{
+        @include pseudo-style;
+    }
+
+    @if $pos{
+        $secPos: null;
+        @if $side == $top or $side == $bottom{ $secPos: $left}
+        @else{ $secPos: $top }
+
+        #{$side}: 100%;
+        #{$secPos}: 50%;
+        margin-#{$secPos}: -#{$width}/2;
+    }
+    @else{
+        @content;
+    }
+
+    border: $width solid transparent;
+    @include arrowBorder($side, $height, $color, $mirrorSide);
+}
