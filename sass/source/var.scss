@@ -35,7 +35,8 @@ $field-height: 30px;
     top: -#{$top}px;
 }
 // ** Arrows
-@mixin arrowBorder($side, $height, $color, $mirrorSide){
+@mixin arrowBorder($side, $height, $color){
+    $mirrorSide: opposite-position($side);
     border:{
         #{$side}:{
             width: $height;
@@ -47,17 +48,6 @@ $field-height: 30px;
     }
 }
 @mixin arrow($side, $width, $height, $color, $once: true, $pos: true){
-    $mirrorSide: null;
-    $top: "top";
-    $right: "right";
-    $bottom: "bottom";
-    $left: "left";
-
-    @if $side == $top { $mirrorSide: $bottom; }
-    @else if $side == $right { $mirrorSide: $left; }
-    @else if $side == $bottom{ $mirrorSide: $top; }
-    @else{ $mirrorSide: $right; }
-
     @if $once{
         @include pseudo-style;
     }
@@ -76,5 +66,10 @@ $field-height: 30px;
     }
 
     border: $width solid transparent;
-    @include arrowBorder($side, $height, $color, $mirrorSide);
+    @include arrowBorder($side, $height, $color);
+}
+@mixin reset-html5 {
+    #{elements-of-type(html5-block)} {
+        display: block;
+    }
 }

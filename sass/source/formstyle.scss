@@ -121,7 +121,7 @@ $slct-arrow-color: #474545;
     &.active{
         @include field-focus;
         &:after{
-            @include arrowBorder("bottom", $slct-arrow-height, $slct-arrow-color, "top");
+            @include arrowBorder("bottom", $slct-arrow-height, $slct-arrow-color);
         }
     }
     &.field{
